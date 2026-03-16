@@ -125,20 +125,28 @@ nav a i {
 
 nav a:hover { color: var(--blue-light); }
 
+@keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
 .cta-nav {
     padding: 8px 18px;
     border-radius: 999px;
-    background: linear-gradient(135deg, #2563eb, #22c55e);
+    background: linear-gradient(135deg, #2563eb, #22c55e, #2563eb);
+    background-size: 200% 200%;
     color: white !important;
     display: inline-flex;
     align-items: center;
     gap: 8px;
     font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .cta-nav i { font-size: 0.95rem; }
 .cta-nav:hover {
-    filter: brightness(1.05);
-    transform: translateY(-1px);
+    animation: gradientShift 1s ease infinite alternate;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37,99,235,0.4);
 }
 
 /* Hamburger */
@@ -186,7 +194,7 @@ nav a:hover { color: var(--blue-light); }
 .hero h1 {
     font-size: 2.6rem;
     line-height: 1.15;
-    background: linear-gradient(135deg, #2563eb, #22c55e, #e5e7eb);
+    background: linear-gradient(135deg, #2563eb, #0eb787, #7cd3ff);
     -webkit-background-clip: text;
     color: transparent;
     font-family: inter;
@@ -208,7 +216,8 @@ nav a:hover { color: var(--blue-light); }
 .cta-main {
     padding: 12px 24px;
     border-radius: 999px;
-    background: linear-gradient(135deg, #2563eb, #22c55e);
+    background: linear-gradient(135deg, #2563eb, #22c55e, #2563eb);
+    background-size: 200% 200%;
     color: white;
     text-decoration: none;
     font-weight: 600;
@@ -216,11 +225,13 @@ nav a:hover { color: var(--blue-light); }
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .cta-main i { font-size: 0.95rem; }
 .cta-main:hover {
-    filter: brightness(1.06);
-    transform: translateY(-1px);
+    animation: gradientShift 1s ease infinite alternate;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37,99,235,0.4);
 }
 
 .cta-secondary {
@@ -232,11 +243,13 @@ nav a:hover { color: var(--blue-light); }
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
 }
 .cta-secondary i { font-size: 0.9rem; }
 .cta-secondary:hover {
     border-color: var(--blue);
     color: var(--blue);
+    background: rgba(37,99,235,0.08);
 }
 
 /* Hero visual with parallax */
@@ -387,7 +400,8 @@ section {
     color: #4b5563;
     text-decoration: none;
     font-size: 0.85rem;
-    background-color: var(--border-subtle-light);
+    background-color: #cbd5e166;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 body.dark .card-cta {
     color: #cbd5e1;
@@ -399,6 +413,7 @@ body.dark .card-cta {
     background: var(--blue);
     color: white;
     border-color: var(--blue);
+    transform: translateY(-2px);
 }
 
 /* Testimonial */
